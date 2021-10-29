@@ -3,6 +3,10 @@ package com.quantitymeasurement;
 import java.util.Objects;
 
 public class Inch {
+    public double getValue() {
+        return value;
+    }
+
     private final double value;
 
     public Inch(double value) {

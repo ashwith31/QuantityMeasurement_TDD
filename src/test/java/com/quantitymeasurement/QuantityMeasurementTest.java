@@ -86,8 +86,9 @@ public class QuantityMeasurementTest {
     @Test
     void given1Feet_WhenConvertedToInches_ShouldReturn12Inches() {
         QuantityMeasurement qm = new QuantityMeasurement();
-        double result =  qm.convertFeetToInch(1);
+        Feet feet = new Feet(1);
+        Inch result =  qm.convertFeetToInch(feet.getValue());
         double expectedValue = 12;
-        Assertions.assertEquals(expectedValue, result);
+        Assertions.assertEquals(expectedValue, result.getValue());
     }
 }
