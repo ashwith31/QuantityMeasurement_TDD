@@ -82,4 +82,12 @@ public class QuantityMeasurementTest {
         Inch inch2 = new Inch(1.0);
         Assertions.assertEquals(inch1, inch2);
     }
+
+    @Test
+    void given1Feet_WhenConvertedToInches_ShouldReturn12Inches() {
+        QuantityMeasurement qm = new QuantityMeasurement();
+        double result =  qm.convertFeetToInch(1);
+        double expectedValue = 12;
+        Assertions.assertEquals(expectedValue, result);
+    }
 }
