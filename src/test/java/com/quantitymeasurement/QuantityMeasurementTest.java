@@ -39,4 +39,11 @@ public class QuantityMeasurementTest {
         Double feet1 = new Double(0.0);
         Assertions.assertNotEquals(feet, feet1);
     }
+
+    @Test
+    void given1FeetAnd1Feet_ShouldReturnEqual(){
+        Feet feet1 = new Feet(1.0);
+        Feet feet2 = new Feet(1.0);
+        Assertions.assertEquals(feet1, feet2);
+    }
 }
