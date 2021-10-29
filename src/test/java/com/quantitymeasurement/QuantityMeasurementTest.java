@@ -113,4 +113,11 @@ public class QuantityMeasurementTest {
         boolean result = yard1 == yard2;
         Assertions.assertFalse(result);
     }
+
+    @Test
+    void givenYardandDifferentType_ShouldReturnNotEqual() {
+        Yard yard = new Yard(0.0);
+        boolean newYard = true;
+        Assertions.assertNotEquals(yard, newYard);
+    }
 }
