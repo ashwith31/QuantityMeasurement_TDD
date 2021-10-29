@@ -91,4 +91,11 @@ public class QuantityMeasurementTest {
         double expectedValue = 12;
         Assertions.assertEquals(expectedValue, result.getValue());
     }
+
+    @Test
+    void given0YardAnd0Yard_ShouldReturnEqual() {
+        Yard yard1 = new Yard(0.0);
+        Yard yard2 = new Yard(0.0);
+        Assertions.assertEquals(yard1, yard2);
+    }
 }
