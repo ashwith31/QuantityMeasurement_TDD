@@ -127,4 +127,13 @@ public class QuantityMeasurementTest {
         Yard yard2 = new Yard(1.0);
         Assertions.assertEquals(yard1, yard2);
     }
+
+    @Test
+    void given3Feet_WhenConvertedToYards_ShouldReturn1Yard() {
+        QuantityMeasurement qm = new QuantityMeasurement();
+        Feet feet = new Feet(3);
+        Yard result =  qm.convertFeetToYard(feet.getValue());
+        double expectedValue = 1;
+        Assertions.assertEquals(expectedValue, result.getValue());
+    }
 }
