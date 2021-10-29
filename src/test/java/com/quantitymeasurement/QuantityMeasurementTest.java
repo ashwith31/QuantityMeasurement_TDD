@@ -120,4 +120,11 @@ public class QuantityMeasurementTest {
         boolean newYard = true;
         Assertions.assertNotEquals(yard, newYard);
     }
+
+    @Test
+    void given1YardAnd1Yard_ShouldReturnEqual() {
+        Yard yard1 = new Yard(1.0);
+        Yard yard2 = new Yard(1.0);
+        Assertions.assertEquals(yard1, yard2);
+    }
 }
