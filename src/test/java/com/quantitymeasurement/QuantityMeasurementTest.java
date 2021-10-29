@@ -36,7 +36,7 @@ public class QuantityMeasurementTest {
     @Test
     void givenDifferentType_WhenCompared_ShouldReturnFalse() {
         Feet feet = new Feet(0.0);
-        Double feet1 = new Double(0.0);
+        boolean feet1 = true;
         Assertions.assertNotEquals(feet, feet1);
     }
 
@@ -67,5 +67,12 @@ public class QuantityMeasurementTest {
         Inch inch2 = new Inch(0.0);
         boolean result = inch1 == inch2;
         Assertions.assertFalse(result);
+    }
+
+    @Test
+    void givenInchandDifferentType_ShouldReturnNotEqual() {
+        Inch inch = new Inch(0.0);
+        boolean newInch = true;
+        Assertions.assertNotEquals(inch, newInch);
     }
 }
