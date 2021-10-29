@@ -32,4 +32,11 @@ public class QuantityMeasurementTest {
         boolean differentReference = feet == feet1;
         Assertions.assertFalse(differentReference);
     }
+
+    @Test
+    void givenDifferentType_WhenCompared_ShouldReturnFalse() {
+        Feet feet = new Feet(0.0);
+        Double feet1 = new Double(0.0);
+        Assertions.assertNotEquals(feet, feet1);
+    }
 }
