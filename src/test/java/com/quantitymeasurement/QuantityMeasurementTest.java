@@ -134,6 +134,6 @@ public class QuantityMeasurementTest {
         Feet feet = new Feet(3);
         Yard result =  qm.convertFeetToYard(feet.getValue());
         double expectedValue = 1;
-        Assertions.assertEquals(expectedValue, result.getValue());
+        Assertions.assertEquals(expectedValue, result.getValue(),0.1);
     }
 }

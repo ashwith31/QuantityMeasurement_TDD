@@ -7,6 +7,6 @@ public class QuantityMeasurement {
    }
 
    public Yard convertFeetToYard(double feet){
-       return new Yard(0);
+       return new Yard(feet*0.33);
    }
 }
