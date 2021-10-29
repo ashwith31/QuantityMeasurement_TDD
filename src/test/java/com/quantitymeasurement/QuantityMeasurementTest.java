@@ -75,4 +75,11 @@ public class QuantityMeasurementTest {
         boolean newInch = true;
         Assertions.assertNotEquals(inch, newInch);
     }
+
+    @Test
+    void given1InchAnd1Inch_ShouldReturnEqual() {
+        Inch inch1 = new Inch(1.0);
+        Inch inch2 = new Inch(1.0);
+        Assertions.assertEquals(inch1, inch2);
+    }
 }
