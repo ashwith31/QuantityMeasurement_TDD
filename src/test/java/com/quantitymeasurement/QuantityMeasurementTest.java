@@ -183,4 +183,11 @@ public class QuantityMeasurementTest {
         boolean result = centimeter == centimeter1;
         Assertions.assertFalse(result);
     }
+
+    @Test
+    public void givenCentimeterFromDifferentType_ShouldReturnNotEqual() {
+        Centimeter centimeter = new Centimeter(0.0);
+         boolean newBoolean = true;
+        Assertions.assertNotEquals(centimeter, newBoolean);
+    }
 }
