@@ -136,4 +136,29 @@ public class QuantityMeasurementTest {
         double expectedValue = 1;
         Assertions.assertEquals(expectedValue, result.getValue(),0.1);
     }
+
+    @Test
+    void given1Yard_WhenConvertedToInches_ShouldReturn36Yard() {
+        QuantityMeasurement qm = new QuantityMeasurement();
+        Yard feet = new Yard(1);
+        Inch result =  qm.convertYardToInch(feet.getValue());
+        double expectedValue = 36;
+        Assertions.assertEquals(expectedValue, result.getValue(),0.1);
+    }
+
+    @Test
+    void given1Feet_WhenConvertedToYards_ShouldNotReturn1Yard() {
+        QuantityMeasurement qm = new QuantityMeasurement();
+        Feet feet1 = new Feet(1.0);
+        Yard yard1 = qm.convertFeetToYard(feet1.getValue());
+        Assertions.assertNotEquals(1.0, yard1.getValue());
+    }
+
+    @Test
+    void given36Inches_WhenConvertedToYards_ShouldReturn1Yard() {
+        QuantityMeasurement qm = new QuantityMeasurement();
+        Inch inch1 = new Inch(36.0);
+        Yard yard1 = qm.convertInchToYard(inch1.getValue());
+        Assertions.assertEquals(1.0, yard1.getValue());
+    }
 }

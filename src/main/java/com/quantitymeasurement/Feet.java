@@ -3,14 +3,15 @@ package com.quantitymeasurement;
 import java.util.Objects;
 
 public class Feet {
-    public double getValue() {
-        return value;
-    }
 
     private final double value;
 
     public Feet(double  value) {
         this.value = value;
+    }
+
+    public double getValue() {
+        return value;
     }
 
     @Override
