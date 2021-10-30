@@ -175,4 +175,12 @@ public class QuantityMeasurementTest {
         Centimeter centimeter1 = null;
         Assertions.assertNotEquals(centimeter, centimeter1);
     }
+
+    @Test
+    public void givenCentimeterFromDifferentReference_ShouldReturnFalse() {
+        Centimeter centimeter = new Centimeter(0.0);
+        Centimeter centimeter1 = new Centimeter(0.0);
+        boolean result = centimeter == centimeter1;
+        Assertions.assertFalse(result);
+    }
 }
