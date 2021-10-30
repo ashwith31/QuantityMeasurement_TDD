@@ -168,4 +168,11 @@ public class QuantityMeasurementTest {
        Centimeter centimeter1 = new Centimeter(0.0);
        Assertions.assertEquals(centimeter, centimeter1);
     }
+
+    @Test
+    public void given0CentimeterAndNull_ShouldReturnNotEqual() {
+        Centimeter centimeter = new Centimeter(0.0);
+        Centimeter centimeter1 = null;
+        Assertions.assertNotEquals(centimeter, centimeter1);
+    }
 }
