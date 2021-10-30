@@ -161,4 +161,11 @@ public class QuantityMeasurementTest {
         Yard yard1 = qm.convertInchToYard(inch1.getValue());
         Assertions.assertEquals(1.0, yard1.getValue());
     }
+
+    @Test
+    void given0CentimeterAnd0Centimeter_ShouldReturnEqual(){
+       Centimeter centimeter = new Centimeter(0.0);
+       Centimeter centimeter1 = new Centimeter(0.0);
+       Assertions.assertEquals(centimeter, centimeter1);
+    }
 }
