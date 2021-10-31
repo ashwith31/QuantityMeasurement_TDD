@@ -197,4 +197,12 @@ public class QuantityMeasurementTest {
         Centimeter centimeter1 = new Centimeter(1.0);
         Assertions.assertEquals(centimeter, centimeter1);
     }
+
+    @Test
+    void given2Inches_WhenConvertedToCentimeters_ShouldReturn5Centimeters() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        Inch inch = new Inch(2.0);
+        Centimeter centimeter = quantityMeasurement.convertInchToCentimeter(inch.getValue());
+        Assertions.assertEquals(5, centimeter.getValue());
+    }
 }

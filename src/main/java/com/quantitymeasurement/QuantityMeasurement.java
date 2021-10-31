@@ -17,4 +17,8 @@ public class QuantityMeasurement {
     public Yard convertInchToYard(double inch){
         return new Yard(inch / 36);
     }
+
+    public Centimeter convertInchToCentimeter(double value) {
+        return new Centimeter(0);
+    }
 }
