@@ -18,7 +18,7 @@ public class QuantityMeasurement {
         return new Yard(inch / 36);
     }
 
-    public Centimeter convertInchToCentimeter(double value) {
-        return new Centimeter(0);
+    public Centimeter convertInchToCentimeter(Inch value) {
+        return new Centimeter(value.getValue() * 2.5);
     }
 }

@@ -202,7 +202,7 @@ public class QuantityMeasurementTest {
     void given2Inches_WhenConvertedToCentimeters_ShouldReturn5Centimeters() {
         QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
         Inch inch = new Inch(2.0);
-        Centimeter centimeter = quantityMeasurement.convertInchToCentimeter(inch.getValue());
+        Centimeter centimeter = quantityMeasurement.convertInchToCentimeter(inch);
         Assertions.assertEquals(5, centimeter.getValue());
     }
 }
