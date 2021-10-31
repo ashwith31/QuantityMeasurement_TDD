@@ -190,4 +190,11 @@ public class QuantityMeasurementTest {
          boolean newBoolean = true;
         Assertions.assertNotEquals(centimeter, newBoolean);
     }
+
+    @Test
+    void given1CentimeterAnd1Centimeter_ShouldReturnEqual(){
+        Centimeter centimeter = new Centimeter(1.0);
+        Centimeter centimeter1 = new Centimeter(1.0);
+        Assertions.assertEquals(centimeter, centimeter1);
+    }
 }
