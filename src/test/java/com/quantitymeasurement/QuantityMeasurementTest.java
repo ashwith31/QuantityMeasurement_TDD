@@ -247,4 +247,11 @@ public class QuantityMeasurementTest {
         double sum = qm.addLengthsInInchs(inch1, centimeter1);
         Assertions.assertEquals(3.0, sum);
     }
+
+    @Test
+    void given0GallonAnd0Gallon_ShouldReturnEqual() {
+        Volume gallon1 = new Volume(Unit.GALLON, 0.0);
+        Volume gallon2 = new Volume(Unit.GALLON, 0.0);
+        Assertions.assertEquals(gallon1, gallon2);
+    }
 }

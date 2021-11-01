@@ -1,7 +1,7 @@
 package com.quantitymeasurement;
 
 public enum Unit {
-    FEET(30.0), INCH(2.5), YARD(90.0), CENTIMETER(1.0);
+    FEET(30.0), INCH(2.5), YARD(90.0), CENTIMETER(1.0),GALLON(3780);
 
     private final double baseCoversionValue;
 
