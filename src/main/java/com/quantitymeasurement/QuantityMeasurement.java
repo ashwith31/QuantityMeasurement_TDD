@@ -69,4 +69,14 @@ public class QuantityMeasurement {
     public double addLengthsInInchs(Length length1, Length length2){
         return (length1.getValue() * length1.getUnit().getBaseCoversionValue() + length2.getValue() * length2.getUnit().getBaseCoversionValue())/2.5;
     }
+
+    /**
+     * This method is used to convert Gallons to Liters.
+     *
+     * @param gallon1
+     * @return Volume object
+     */
+    public Volume convertGallonToLiters(double gallon1) {
+        return new Volume(Unit.LITERS, gallon1 * 3.78);
+    }
 }

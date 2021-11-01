@@ -319,4 +319,12 @@ public class QuantityMeasurementTest {
         Volume gallon2 = new Volume(Unit.LITERS, 1.0);
         Assertions.assertEquals(gallon1,gallon2);
     }
+
+    @Test
+    void given1Gallon_WhenConvertedToLiters_ShouldReturn3Ponit78Liters() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        Volume gallon1 = new Volume(Unit.LITERS, 1.0);
+        Volume liters1 = quantityMeasurement.convertGallonToLiters(gallon1.getValue());
+        Assertions.assertEquals(3.78, liters1.getValue());
+    }
 }
