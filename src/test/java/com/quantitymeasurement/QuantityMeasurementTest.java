@@ -371,4 +371,13 @@ public class QuantityMeasurementTest {
         Volume milliliters1 = quantityMeasurement.convertLitersToMilliliters(liters1.getValue());
         Assertions.assertEquals(1000, milliliters1.getValue());
     }
+
+    @Test
+    void given1GallonAnd3Ponit78Liters_WhenAdded_ShouldReturn7Point57Liters() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        Volume gallon1 = new Volume(Unit.GALLON, 1);
+        Volume liters1 = new Volume(Unit.LITERS, 3.78);
+        double result = quantityMeasurement.addVolumesInLiters(gallon1, liters1);
+        Assertions.assertEquals(7.57, result,0.1);
+    }
 }

@@ -80,7 +80,17 @@ public class QuantityMeasurement {
         return new Volume(Unit.LITERS, gallon1 * 3.78);
     }
 
+    /**
+     * This is a method which converts Liters to milliliters.
+     *
+     * @param liters
+     * @return Volume object
+     */
     public Volume convertLitersToMilliliters(double liters) {
         return new Volume(Unit.MILLILITERS, liters * 1000);
+    }
+
+    public double addVolumesInLiters(Volume volume1, Volume volume2) {
+        return (volume1.getValue() * volume1.getUnit().getBaseCoversionValue() + volume2.getValue() * volume2.getUnit().getBaseCoversionValue())/Unit.LITERS.getBaseCoversionValue();
     }
 }
