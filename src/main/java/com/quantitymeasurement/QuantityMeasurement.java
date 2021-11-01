@@ -59,7 +59,14 @@ public class QuantityMeasurement {
         return new Length(Unit.CENTIMETER, inch * 2.5);
     }
 
+    /**
+     * This is a method which is used to add two length values in inches.
+     *
+     * @param length1
+     * @param length2
+     * @return double - resultant of addition in inches.
+     */
     public double addLengthsInInchs(Length length1, Length length2){
-        return 0;
+        return (length1.getValue() * length1.getUnit().getBaseCoversionValue() + length2.getValue() * length2.getUnit().getBaseCoversionValue())/2.5;
     }
 }
