@@ -276,4 +276,11 @@ public class QuantityMeasurementTest {
         boolean boolean1 = true;
         Assertions.assertNotEquals(gallon1, boolean1);
     }
+
+    @Test
+    void given1GallonAnd1Gallon_ShouldReturnEqual() {
+        Volume gallon1 = new Volume(Unit.GALLON, 1.0);
+        Volume gallon2 = new Volume(Unit.GALLON, 1.0);
+        Assertions.assertEquals(gallon1,gallon2);
+    }
 }
