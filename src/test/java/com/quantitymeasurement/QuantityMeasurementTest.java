@@ -250,37 +250,73 @@ public class QuantityMeasurementTest {
 
     @Test
     void given0GallonAnd0Gallon_ShouldReturnEqual() {
-        Volume gallon1 = new Volume(Unit.GALLON, 0.0);
-        Volume gallon2 = new Volume(Unit.GALLON, 0.0);
+        Volume gallon1 = new Volume(Unit.LITERS, 0.0);
+        Volume gallon2 = new Volume(Unit.LITERS, 0.0);
         Assertions.assertEquals(gallon1, gallon2);
     }
 
     @Test
     void given0GallonAndNull_ShouldReturnNotEqual() {
-        Volume gallon1 = new Volume(Unit.GALLON, 0.0);
+        Volume gallon1 = new Volume(Unit.LITERS, 0.0);
         Volume gallon2 = null;
         Assertions.assertNotEquals(gallon1, gallon2);
     }
 
     @Test
     void givenGallonFromDifferentReferences_ShouldReturnFalse() {
-        Volume gallon1 = new Volume(Unit.GALLON, 0.0);
-        Volume gallon2 = new Volume(Unit.GALLON, 0.0);
+        Volume gallon1 = new Volume(Unit.LITERS, 0.0);
+        Volume gallon2 = new Volume(Unit.LITERS, 0.0);
         boolean result = gallon1 == gallon2;
         Assertions.assertFalse(result);
     }
 
     @Test
     void givenGallonAndDifferentType_ShouldReturnNotEqual() {
-        Volume gallon1 = new Volume(Unit.GALLON, 0.0);
+        Volume gallon1 = new Volume(Unit.LITERS, 0.0);
         boolean boolean1 = true;
         Assertions.assertNotEquals(gallon1, boolean1);
     }
 
     @Test
     void given1GallonAnd1Gallon_ShouldReturnEqual() {
-        Volume gallon1 = new Volume(Unit.GALLON, 1.0);
-        Volume gallon2 = new Volume(Unit.GALLON, 1.0);
+        Volume gallon1 = new Volume(Unit.LITERS, 1.0);
+        Volume gallon2 = new Volume(Unit.LITERS, 1.0);
+        Assertions.assertEquals(gallon1,gallon2);
+    }
+
+    @Test
+    void given0LitersAnd0Liters_ShouldReturnEqual() {
+        Volume liters1 = new Volume(Unit.LITERS, 0.0);
+        Volume liters2 = new Volume(Unit.LITERS, 0.0);
+        Assertions.assertEquals(liters1, liters2);
+    }
+
+    @Test
+    void given0LitersAndNull_ShouldReturnNotEqual() {
+        Volume liters1 = new Volume(Unit.LITERS, 0.0);
+        Volume liters2 = null;
+        Assertions.assertNotEquals(liters1, liters2);
+    }
+
+    @Test
+    void givenLitersFromDifferentReferences_ShouldReturnFalse() {
+        Volume gallon1 = new Volume(Unit.LITERS, 0.0);
+        Volume gallon2 = new Volume(Unit.LITERS, 0.0);
+        boolean result = gallon1 == gallon2;
+        Assertions.assertFalse(result);
+    }
+
+    @Test
+    void givenLitersAndDifferentType_ShouldReturnNotEqual() {
+        Volume gallon1 = new Volume(Unit.LITERS, 0.0);
+        boolean boolean1 = true;
+        Assertions.assertNotEquals(gallon1, boolean1);
+    }
+
+    @Test
+    void given1LiterAnd1Liter_ShouldReturnEqual() {
+        Volume gallon1 = new Volume(Unit.LITERS, 1.0);
+        Volume gallon2 = new Volume(Unit.LITERS, 1.0);
         Assertions.assertEquals(gallon1,gallon2);
     }
 }
