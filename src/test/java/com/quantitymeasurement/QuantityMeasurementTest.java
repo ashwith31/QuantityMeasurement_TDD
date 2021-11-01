@@ -269,4 +269,11 @@ public class QuantityMeasurementTest {
         boolean result = gallon1 == gallon2;
         Assertions.assertFalse(result);
     }
+
+    @Test
+    void givenGallonAndDifferentType_ShouldReturnNotEqual() {
+        Volume gallon1 = new Volume(Unit.GALLON, 0.0);
+        boolean boolean1 = true;
+        Assertions.assertNotEquals(gallon1, boolean1);
+    }
 }
