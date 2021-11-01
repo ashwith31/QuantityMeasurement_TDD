@@ -1,11 +1,12 @@
 package com.quantitymeasurement;
 
-/**
- * This is a QunatityMeasurement Class where we convert different entities.
+/*************************************************************************************************
+ * Purpose: This is a QunatityMeasurement Class where we convert different entities.
  *
  * @author Ashwith
  * @since 30/10/21
- */
+ *************************************************************************************************/
+
 public class QuantityMeasurement {
 
     /**

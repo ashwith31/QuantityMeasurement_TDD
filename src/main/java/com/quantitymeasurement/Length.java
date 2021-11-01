@@ -1,11 +1,13 @@
 package com.quantitymeasurement;
 
-/**
- * This is a pojo class where we have all the information about the Units thst we have.
+import java.util.Objects;
+/***************************************************************************************************
+ * Purpose: This is a pojo class where we have all the information about the Units of Length that we have.
  *
  * @author Ashwith
  * @since 30/10/21
- */
+ ****************************************************************************************************/
+
 public class Length {
 
     private final double value;
@@ -29,6 +31,6 @@ public class Length {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Length length = (Length) o;
-        return Double.compare(length.value, value) == 0;
+        return Double.compare(length.value, value) == 0 && unit == length.unit;
     }
 }

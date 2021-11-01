@@ -1,5 +1,4 @@
 package com.quantitymeasurement;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -204,5 +203,12 @@ public class QuantityMeasurementTest {
         Length inch = new Length(Length.Unit.INCH, 2.0);
         Length centimeter = quantityMeasurement.convertInchToCentimeter(inch.getValue());
         Assertions.assertEquals(5, centimeter.getValue());
+    }
+
+    @Test
+    void given1FeetAnd1Inch_ShouldReturnNotEqual() {
+        Length feet = new Length(Length.Unit.FEET, 1.0);
+        Length inch = new Length(Length.Unit.INCH, 1.0);
+        Assertions.assertNotEquals(feet, inch);
     }
 }
