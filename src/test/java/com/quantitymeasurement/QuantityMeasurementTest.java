@@ -261,4 +261,12 @@ public class QuantityMeasurementTest {
         Volume gallon2 = null;
         Assertions.assertNotEquals(gallon1, gallon2);
     }
+
+    @Test
+    void givenGallonFromDifferentReferences_ShouldReturnFalse() {
+        Volume gallon1 = new Volume(Unit.GALLON, 0.0);
+        Volume gallon2 = new Volume(Unit.GALLON, 0.0);
+        boolean result = gallon1 == gallon2;
+        Assertions.assertFalse(result);
+    }
 }
