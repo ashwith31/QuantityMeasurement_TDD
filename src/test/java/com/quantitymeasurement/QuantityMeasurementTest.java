@@ -327,4 +327,40 @@ public class QuantityMeasurementTest {
         Volume liters1 = quantityMeasurement.convertGallonToLiters(gallon1.getValue());
         Assertions.assertEquals(3.78, liters1.getValue());
     }
+
+    @Test
+    void given0MillilitersAnd0Milliliters_ShouldReturnEqual() {
+        Volume milliliters1 = new Volume(Unit.MILLILITERS, 0.0);
+        Volume milliliters2 = new Volume(Unit.MILLILITERS, 0.0);
+        Assertions.assertEquals(milliliters1, milliliters2);
+    }
+
+    @Test
+    void given0MillilitersAndNull_ShouldReturnNotEqual() {
+        Volume liters1 = new Volume(Unit.MILLILITERS, 0.0);
+        Volume liters2 = null;
+        Assertions.assertNotEquals(liters1, liters2);
+    }
+
+    @Test
+    void givenMillilitersFromDifferentReferences_ShouldReturnFalse() {
+        Volume gallon1 = new Volume(Unit.MILLILITERS, 0.0);
+        Volume gallon2 = new Volume(Unit.MILLILITERS, 0.0);
+        boolean result = gallon1 == gallon2;
+        Assertions.assertFalse(result);
+    }
+
+    @Test
+    void givenMilliitersAndDifferentType_ShouldReturnNotEqual() {
+        Volume milliliters1 = new Volume(Unit.MILLILITERS, 0.0);
+        boolean boolean1 = true;
+        Assertions.assertNotEquals(milliliters1, boolean1);
+    }
+
+    @Test
+    void given1MilliLiterAnd1MilliLiter_ShouldReturnEqual() {
+        Volume milliliters1 = new Volume(Unit.MILLILITERS, 1.0);
+        Volume milliliters2 = new Volume(Unit.MILLILITERS, 1.0);
+        Assertions.assertEquals(milliliters1, milliliters2);
+    }
 }
