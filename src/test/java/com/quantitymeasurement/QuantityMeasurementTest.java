@@ -238,4 +238,13 @@ public class QuantityMeasurementTest {
         double sum = qm.addLengthsInInchs(feet1, feet2);
         Assertions.assertEquals(24.0, sum);
     }
+
+    @Test
+    void given2InchAnd2Point5Centimeter_WhenAdded_ShouldReturn3Inch() {
+        QuantityMeasurement qm = new QuantityMeasurement();
+        Length inch1 = new Length(Unit.INCH, 2.0);
+        Length centimeter1 = new Length(Unit.CENTIMETER,2.5);
+        double sum = qm.addLengthsInInchs(inch1, centimeter1);
+        Assertions.assertEquals(3.0, sum);
+    }
 }
