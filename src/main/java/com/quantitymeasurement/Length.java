@@ -13,13 +13,13 @@ public class Length {
     private final double value;
     private final Unit unit;
 
-    enum Unit {
-        FEET, INCH, YARD, CENTIMETER
-    }
-
     public Length(Unit unit, double value) {
         this.value = value;
         this.unit = unit;
+    }
+
+    public Unit getUnit() {
+        return unit;
     }
 
     public double getValue() {

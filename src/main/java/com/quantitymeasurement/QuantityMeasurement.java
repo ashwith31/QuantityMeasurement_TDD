@@ -16,7 +16,7 @@ public class QuantityMeasurement {
      * @return Length object
      */
     public Length convertFeetToInch(double feet) {
-        return new Length(Length.Unit.INCH, feet * 12);
+        return new Length(Unit.INCH, feet * 12);
     }
 
     /**
@@ -26,7 +26,7 @@ public class QuantityMeasurement {
      * @return Length Object
      */
     public Length convertFeetToYard(double feet) {
-        return new Length(Length.Unit.YARD, feet * 0.33);
+        return new Length(Unit.YARD, feet * 0.33);
     }
 
     /**
@@ -36,7 +36,7 @@ public class QuantityMeasurement {
      * @return Length Object
      */
     public Length convertYardToInch(double yard) {
-        return new Length(Length.Unit.INCH, yard * 36);
+        return new Length(Unit.INCH, yard * 36);
     }
 
     /**
@@ -46,7 +46,7 @@ public class QuantityMeasurement {
      * @return Length Object
      */
     public Length convertInchToYard(double inch) {
-        return new Length(Length.Unit.YARD, inch / 36);
+        return new Length(Unit.YARD, inch / 36);
     }
 
     /**
@@ -56,6 +56,10 @@ public class QuantityMeasurement {
      * @return Length Object
      */
     public Length convertInchToCentimeter(double inch) {
-        return new Length(Length.Unit.CENTIMETER, inch * 2.5);
+        return new Length(Unit.CENTIMETER, inch * 2.5);
+    }
+
+    public double addLengthsInInchs(Length length1, Length length2){
+        return 0;
     }
 }
