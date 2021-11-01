@@ -380,4 +380,13 @@ public class QuantityMeasurementTest {
         double result = quantityMeasurement.addVolumesInLiters(gallon1, liters1);
         Assertions.assertEquals(7.57, result,0.1);
     }
+
+    @Test
+    void given1LiterAnd1000MilliLiters_WhenAdded_ShouldReturn2Liters() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        Volume milliliters1 = new Volume(Unit.MILLILITERS, 1000);
+        Volume liters1 = new Volume(Unit.LITERS, 1);
+        double result = quantityMeasurement.addVolumesInLiters(milliliters1, liters1);
+        Assertions.assertEquals(2.0, result,0.1);
+    }
 }
