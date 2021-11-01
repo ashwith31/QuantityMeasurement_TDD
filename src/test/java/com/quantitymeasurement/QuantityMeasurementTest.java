@@ -363,4 +363,12 @@ public class QuantityMeasurementTest {
         Volume milliliters2 = new Volume(Unit.MILLILITERS, 1.0);
         Assertions.assertEquals(milliliters1, milliliters2);
     }
+
+    @Test
+    void given1Liter_WhenComparedTOMilliliters_ShouldReturn1000Milliliters() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        Volume liters1 = new Volume(Unit.LITERS, 1);
+        Volume milliliters1 = quantityMeasurement.convertLitersToMilliliters(liters1.getValue());
+        Assertions.assertEquals(1000, milliliters1.getValue());
+    }
 }

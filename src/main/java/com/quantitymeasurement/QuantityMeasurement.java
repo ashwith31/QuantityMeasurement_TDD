@@ -67,7 +67,7 @@ public class QuantityMeasurement {
      * @return double - resultant of addition in inches.
      */
     public double addLengthsInInchs(Length length1, Length length2){
-        return (length1.getValue() * length1.getUnit().getBaseCoversionValue() + length2.getValue() * length2.getUnit().getBaseCoversionValue())/2.5;
+        return (length1.getValue() * length1.getUnit().getBaseCoversionValue() + length2.getValue() * length2.getUnit().getBaseCoversionValue()) / Unit.INCH.getBaseCoversionValue();
     }
 
     /**
@@ -78,5 +78,9 @@ public class QuantityMeasurement {
      */
     public Volume convertGallonToLiters(double gallon1) {
         return new Volume(Unit.LITERS, gallon1 * 3.78);
+    }
+
+    public Volume convertLitersToMilliliters(double liters) {
+        return new Volume(Unit.MILLILITERS, liters * 1000);
     }
 }
