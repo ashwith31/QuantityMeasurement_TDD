@@ -256,135 +256,135 @@ public class QuantityMeasurementTest {
 
     @Test
     void given0GallonAnd0Gallon_ShouldReturnEqual() {
-        Volume gallon1 = new Volume(Unit.LITERS, 0.0);
-        Volume gallon2 = new Volume(Unit.LITERS, 0.0);
+        Weight gallon1 = new Weight(Unit.LITERS, 0.0);
+        Weight gallon2 = new Weight(Unit.LITERS, 0.0);
         Assertions.assertEquals(gallon1, gallon2);
     }
 
     @Test
     void given0GallonAndNull_ShouldReturnNotEqual() {
-        Volume gallon1 = new Volume(Unit.LITERS, 0.0);
-        Volume gallon2 = null;
+        Weight gallon1 = new Weight(Unit.LITERS, 0.0);
+        Weight gallon2 = null;
         Assertions.assertNotEquals(gallon1, gallon2);
     }
 
     @Test
     void givenGallonFromDifferentReferences_ShouldReturnFalse() {
-        Volume gallon1 = new Volume(Unit.LITERS, 0.0);
-        Volume gallon2 = new Volume(Unit.LITERS, 0.0);
+        Weight gallon1 = new Weight(Unit.LITERS, 0.0);
+        Weight gallon2 = new Weight(Unit.LITERS, 0.0);
         boolean result = gallon1 == gallon2;
         Assertions.assertFalse(result);
     }
 
     @Test
     void givenGallonAndDifferentType_ShouldReturnNotEqual() {
-        Volume gallon1 = new Volume(Unit.LITERS, 0.0);
+        Weight gallon1 = new Weight(Unit.LITERS, 0.0);
         boolean boolean1 = true;
         Assertions.assertNotEquals(gallon1, boolean1);
     }
 
     @Test
     void given1GallonAnd1Gallon_ShouldReturnEqual() {
-        Volume gallon1 = new Volume(Unit.LITERS, 1.0);
-        Volume gallon2 = new Volume(Unit.LITERS, 1.0);
+        Weight gallon1 = new Weight(Unit.LITERS, 1.0);
+        Weight gallon2 = new Weight(Unit.LITERS, 1.0);
         Assertions.assertEquals(gallon1,gallon2);
     }
 
     @Test
     void given0LitersAnd0Liters_ShouldReturnEqual() {
-        Volume liters1 = new Volume(Unit.LITERS, 0.0);
-        Volume liters2 = new Volume(Unit.LITERS, 0.0);
+        Weight liters1 = new Weight(Unit.LITERS, 0.0);
+        Weight liters2 = new Weight(Unit.LITERS, 0.0);
         Assertions.assertEquals(liters1, liters2);
     }
 
     @Test
     void given0LitersAndNull_ShouldReturnNotEqual() {
-        Volume liters1 = new Volume(Unit.LITERS, 0.0);
-        Volume liters2 = null;
+        Weight liters1 = new Weight(Unit.LITERS, 0.0);
+        Weight liters2 = null;
         Assertions.assertNotEquals(liters1, liters2);
     }
 
     @Test
     void givenLitersFromDifferentReferences_ShouldReturnFalse() {
-        Volume gallon1 = new Volume(Unit.LITERS, 0.0);
-        Volume gallon2 = new Volume(Unit.LITERS, 0.0);
+        Weight gallon1 = new Weight(Unit.LITERS, 0.0);
+        Weight gallon2 = new Weight(Unit.LITERS, 0.0);
         boolean result = gallon1 == gallon2;
         Assertions.assertFalse(result);
     }
 
     @Test
     void givenLitersAndDifferentType_ShouldReturnNotEqual() {
-        Volume gallon1 = new Volume(Unit.LITERS, 0.0);
+        Weight gallon1 = new Weight(Unit.LITERS, 0.0);
         boolean boolean1 = true;
         Assertions.assertNotEquals(gallon1, boolean1);
     }
 
     @Test
     void given1LiterAnd1Liter_ShouldReturnEqual() {
-        Volume gallon1 = new Volume(Unit.LITERS, 1.0);
-        Volume gallon2 = new Volume(Unit.LITERS, 1.0);
+        Weight gallon1 = new Weight(Unit.LITERS, 1.0);
+        Weight gallon2 = new Weight(Unit.LITERS, 1.0);
         Assertions.assertEquals(gallon1,gallon2);
     }
 
     @Test
     void given1Gallon_WhenConvertedToLiters_ShouldReturn3Ponit78Liters() {
         QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-        Volume gallon1 = new Volume(Unit.GALLON, 1.0);
-        Volume liters = new Volume(Unit.LITERS, 0.0);
-        Volume liters1 = quantityMeasurement.convertVolumes(gallon1, liters);
+        Weight gallon1 = new Weight(Unit.GALLON, 1.0);
+        Weight liters = new Weight(Unit.LITERS, 0.0);
+        Weight liters1 = quantityMeasurement.convertVolumes(gallon1, liters);
         Assertions.assertEquals(3.78, liters1.getValue());
     }
 
     @Test
     void given0MillilitersAnd0Milliliters_ShouldReturnEqual() {
-        Volume milliliters1 = new Volume(Unit.MILLILITERS, 0.0);
-        Volume milliliters2 = new Volume(Unit.MILLILITERS, 0.0);
+        Weight milliliters1 = new Weight(Unit.MILLILITERS, 0.0);
+        Weight milliliters2 = new Weight(Unit.MILLILITERS, 0.0);
         Assertions.assertEquals(milliliters1, milliliters2);
     }
 
     @Test
     void given0MillilitersAndNull_ShouldReturnNotEqual() {
-        Volume liters1 = new Volume(Unit.MILLILITERS, 0.0);
-        Volume liters2 = null;
+        Weight liters1 = new Weight(Unit.MILLILITERS, 0.0);
+        Weight liters2 = null;
         Assertions.assertNotEquals(liters1, liters2);
     }
 
     @Test
     void givenMillilitersFromDifferentReferences_ShouldReturnFalse() {
-        Volume gallon1 = new Volume(Unit.MILLILITERS, 0.0);
-        Volume gallon2 = new Volume(Unit.MILLILITERS, 0.0);
+        Weight gallon1 = new Weight(Unit.MILLILITERS, 0.0);
+        Weight gallon2 = new Weight(Unit.MILLILITERS, 0.0);
         boolean result = gallon1 == gallon2;
         Assertions.assertFalse(result);
     }
 
     @Test
     void givenMilliitersAndDifferentType_ShouldReturnNotEqual() {
-        Volume milliliters1 = new Volume(Unit.MILLILITERS, 0.0);
+        Weight milliliters1 = new Weight(Unit.MILLILITERS, 0.0);
         boolean boolean1 = true;
         Assertions.assertNotEquals(milliliters1, boolean1);
     }
 
     @Test
     void given1MilliLiterAnd1MilliLiter_ShouldReturnEqual() {
-        Volume milliliters1 = new Volume(Unit.MILLILITERS, 1.0);
-        Volume milliliters2 = new Volume(Unit.MILLILITERS, 1.0);
+        Weight milliliters1 = new Weight(Unit.MILLILITERS, 1.0);
+        Weight milliliters2 = new Weight(Unit.MILLILITERS, 1.0);
         Assertions.assertEquals(milliliters1, milliliters2);
     }
 
     @Test
     void given1Liter_WhenComparedTOMilliliters_ShouldReturn1000Milliliters() {
         QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-        Volume liters1 = new Volume(Unit.LITERS, 1);
-        Volume milliliters = new Volume(Unit.MILLILITERS, 0.0);
-        Volume milliliters1 = quantityMeasurement.convertVolumes(liters1, milliliters);
+        Weight liters1 = new Weight(Unit.LITERS, 1);
+        Weight milliliters = new Weight(Unit.MILLILITERS, 0.0);
+        Weight milliliters1 = quantityMeasurement.convertVolumes(liters1, milliliters);
         Assertions.assertEquals(1000, milliliters1.getValue());
     }
 
     @Test
     void given1GallonAnd3Ponit78Liters_WhenAdded_ShouldReturn7Point57Liters() {
         QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-        Volume gallon1 = new Volume(Unit.GALLON, 1);
-        Volume liters1 = new Volume(Unit.LITERS, 3.78);
+        Weight gallon1 = new Weight(Unit.GALLON, 1);
+        Weight liters1 = new Weight(Unit.LITERS, 3.78);
         double result = quantityMeasurement.addVolumesInLiters(gallon1, liters1);
         Assertions.assertEquals(7.57, result,0.1);
     }
@@ -392,9 +392,32 @@ public class QuantityMeasurementTest {
     @Test
     void given1LiterAnd1000MilliLiters_WhenAdded_ShouldReturn2Liters() {
         QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-        Volume milliliters1 = new Volume(Unit.MILLILITERS, 1000);
-        Volume liters1 = new Volume(Unit.LITERS, 1);
+        Weight milliliters1 = new Weight(Unit.MILLILITERS, 1000);
+        Weight liters1 = new Weight(Unit.LITERS, 1);
         double result = quantityMeasurement.addVolumesInLiters(milliliters1, liters1);
         Assertions.assertEquals(2.0, result,0.1);
+    }
+
+    @Test
+    void given0KGAnd0KG_ShouldReturnEqual() {
+        Weight kilogram1 = new Weight(Unit.KILOGRAM, 0.0);
+        Weight kilogram2 = new Weight(Unit.KILOGRAM, 0.0);
+        Assertions.assertEquals(kilogram1, kilogram2);
+    }
+
+    @Test
+    void given0GramAnd0Gram_ShouldReturnEqual(){
+        Weight gram1 = new Weight(Unit.GRAM, 0);
+        Weight gram2 = new Weight(Unit.GRAM, 0);
+        Assertions.assertEquals(gram1, gram2);
+    }
+
+    @Test
+    void given1KG_WhenComparedWithGrams_ShouldReturn1000Grams() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        Weight kilogram = new Weight(Unit.KILOGRAM, 1);
+        Weight gram = new Weight(Unit.GRAM, 0);
+        Weight result = quantityMeasurement.convertWeights(kilogram, gram);
+        Assertions.assertEquals(1000, result.getValue());
     }
 }

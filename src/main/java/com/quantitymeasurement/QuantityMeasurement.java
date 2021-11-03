@@ -37,8 +37,8 @@ public class QuantityMeasurement {
      * @param
      * @return Volume object
      */
-    public Volume convertVolumes(Volume volume1, Volume volume2) {
-        return new Volume(volume2.getUnit(), volume1.getValue()*(volume1.getUnit().getBaseCoversionValue()/volume2.getUnit().getBaseCoversionValue()));
+    public Weight convertVolumes(Weight volume1, Weight volume2) {
+        return new Weight(volume2.getUnit(), volume1.getValue()*(volume1.getUnit().getBaseCoversionValue()/volume2.getUnit().getBaseCoversionValue()));
     }
 
     /**
@@ -48,7 +48,18 @@ public class QuantityMeasurement {
      * @param volume2
      * @return
      */
-    public double addVolumesInLiters(Volume volume1, Volume volume2) {
+    public double addVolumesInLiters(Weight volume1, Weight volume2) {
         return (volume1.getValue() * volume1.getUnit().getBaseCoversionValue() + volume2.getValue() * volume2.getUnit().getBaseCoversionValue()) / Unit.LITERS.getBaseCoversionValue();
+    }
+
+    /**
+     * This is a method which compares two weights.
+     *
+     * @param weight1
+     * @param weight2
+     * @return Weight object
+     */
+    public Weight convertWeights(Weight weight1, Weight weight2){
+        return new Weight(weight2.getUnit(), weight1.getValue()*(weight1.getUnit().getBaseCoversionValue()/weight2.getUnit().getBaseCoversionValue()));
     }
 }
