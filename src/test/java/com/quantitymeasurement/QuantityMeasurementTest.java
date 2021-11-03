@@ -420,4 +420,20 @@ public class QuantityMeasurementTest {
         Weight result = quantityMeasurement.convertWeights(kilogram, gram);
         Assertions.assertEquals(1000, result.getValue());
     }
+
+    @Test
+    void given0TonneAnd0Tonne_ShouldReturnEqual() {
+        Weight tonne1 = new Weight(Unit.TONNE, 0.0);
+        Weight tonne2 = new Weight(Unit.TONNE, 0.0);
+        Assertions.assertEquals(tonne1, tonne2);
+    }
+
+    @Test
+    void given1Tonne_WhenComparedWithKilogram_ShouldReturn1000Kilogram() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        Weight tonne = new Weight(Unit.TONNE, 1);
+        Weight kilogram = new Weight(Unit.KILOGRAM, 0);
+        Weight result = quantityMeasurement.convertWeights(tonne, kilogram);
+        Assertions.assertEquals(1000, result.getValue());
+    }
 }
