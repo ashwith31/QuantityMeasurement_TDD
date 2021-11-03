@@ -424,7 +424,30 @@ public class QuantityMeasurementTest {
         QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
         Weight weight1 = new Weight(Unit.TONNE,1);
         Weight weight2 = new Weight(Unit.KILOGRAM, 1);
-        double result = quantityMeasurement.addWeigthsInKilogram(weight1, weight2);
+        double result = quantityMeasurement.addWeightsInKilogram(weight1, weight2);
         Assertions.assertEquals(1001, result);
+    }
+
+    @Test
+    void given0FarhenheitAnd0Farenheit_ShouldReturnEqual() {
+        Temperature farenheit1 = new Temperature(Unit.FAHRENHEIT, 0.0);
+        Temperature farenheit2 = new Temperature(Unit.FAHRENHEIT, 0);
+        Assertions.assertEquals(farenheit1, farenheit2);
+    }
+
+    @Test
+    void given0CelsiusAnd0Celsius_ShouldReturnEqual() {
+        Temperature celsius1 = new Temperature(Unit.CELSIUS, 0.0);
+        Temperature facelsius2 = new Temperature(Unit.CELSIUS, 0);
+        Assertions.assertEquals(celsius1, facelsius2);
+    }
+
+    @Test
+    void given212Farhenheit_WhenConvertedToCelsius_ShouldReturn100Celsius() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        Temperature farhenheit = new Temperature(Unit.FAHRENHEIT, 212);
+        Temperature celsius = new Temperature(Unit.CELSIUS,0.0);
+        Temperature result = quantityMeasurement.convertTemperature(farhenheit, celsius);
+        Assertions.assertEquals(100, result.getValue());
     }
 }

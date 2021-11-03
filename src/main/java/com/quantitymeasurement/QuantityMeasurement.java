@@ -12,13 +12,13 @@ public class QuantityMeasurement {
     /**
      * This is a method which converts Lengths.
      *
-     * @param
+     * @param length1
+     * @param length2
      * @return Length object
      */
     public Length convertLengths(Length length1, Length length2) {
         return new Length(length2.getUnit(), length1.getValue()*(length1.getUnit().getBaseCoversionValue()/length2.getUnit().getBaseCoversionValue()));
     }
-
 
     /**
      * This is a method which is used to add two length values in inches.
@@ -34,7 +34,8 @@ public class QuantityMeasurement {
     /**
      * This method is used to convert Volumes.
      *
-     * @param
+     * @param volume1
+     * @param volume2
      * @return Volume object
      */
     public Volume convertVolumes(Volume volume1, Volume volume2) {
@@ -64,13 +65,17 @@ public class QuantityMeasurement {
     }
 
     /**
-     * This is a method which adds two volumes in Liters.
+     * This is a method which adds two weights in Kilograms.
      *
      * @param weight1
      * @param weight2
-     * @return
+     * @return double - resultant of addition.
      */
-    public double addWeigthsInKilogram(Weight weight1, Weight weight2) {
+    public double addWeightsInKilogram(Weight weight1, Weight weight2) {
         return (weight1.getValue() * weight1.getUnit().getBaseCoversionValue() + weight2.getValue() * weight2.getUnit().getBaseCoversionValue()) / Unit.KILOGRAM.getBaseCoversionValue();
+    }
+
+    public Temperature convertTemperature(Temperature temperature1, Temperature temperature2){
+        return new Temperature(temperature2.getUnit(), temperature1.getValue()*(temperature2.getUnit().getBaseCoversionValue()/temperature1.getUnit().getBaseCoversionValue()));
     }
 }
