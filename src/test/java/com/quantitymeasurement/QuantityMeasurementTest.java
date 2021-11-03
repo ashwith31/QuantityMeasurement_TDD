@@ -86,7 +86,8 @@ public class QuantityMeasurementTest {
     void given1Feet_WhenConvertedToInches_ShouldReturn12Inches() {
         QuantityMeasurement qm = new QuantityMeasurement();
         Length feet = new Length(Unit.FEET, 1);
-        Length result =  qm.convertFeetToInch(feet.getValue());
+        Length inch = new Length(Unit.INCH, 1);
+        Length result =  qm.convertLengths(feet, inch);
         double expectedValue = 12;
         Assertions.assertEquals(expectedValue, result.getValue());
     }
@@ -131,7 +132,8 @@ public class QuantityMeasurementTest {
     void given3Feet_WhenConvertedToYards_ShouldReturn1Yard() {
         QuantityMeasurement qm = new QuantityMeasurement();
         Length feet = new Length(Unit.FEET, 3);
-        Length result =  qm.convertFeetToYard(feet.getValue());
+        Length yard = new Length(Unit.YARD, 1);
+        Length result =  qm.convertLengths(feet, yard);
         double expectedValue = 1;
         Assertions.assertEquals(expectedValue, result.getValue(),0.1);
     }
@@ -140,7 +142,8 @@ public class QuantityMeasurementTest {
     void given1Yard_WhenConvertedToInches_ShouldReturn36Yard() {
         QuantityMeasurement qm = new QuantityMeasurement();
         Length feet = new Length(Unit.YARD, 1);
-        Length result =  qm.convertYardToInch(feet.getValue());
+        Length inches = new Length(Unit.INCH, 0);
+        Length result =  qm.convertLengths(feet, inches);
         double expectedValue = 36;
         Assertions.assertEquals(expectedValue, result.getValue(),0.1);
     }
@@ -149,7 +152,8 @@ public class QuantityMeasurementTest {
     void given1Feet_WhenConvertedToYards_ShouldNotReturn1Yard() {
         QuantityMeasurement qm = new QuantityMeasurement();
         Length feet1 = new Length(Unit.FEET, 1.0);
-        Length length1 = qm.convertFeetToYard(feet1.getValue());
+        Length yard1 = new Length(Unit.YARD,0.0);
+        Length length1 = qm.convertLengths(feet1, yard1);
         Assertions.assertNotEquals(1.0, length1.getValue());
     }
 
@@ -157,7 +161,8 @@ public class QuantityMeasurementTest {
     void given36Inches_WhenConvertedToYards_ShouldReturn1Yard() {
         QuantityMeasurement qm = new QuantityMeasurement();
         Length inch1 = new Length(Unit.INCH, 36.0);
-        Length length1 = qm.convertInchToYard(inch1.getValue());
+        Length yard1 = new Length(Unit.YARD, 0.0);
+        Length length1 = qm.convertLengths(inch1, yard1);
         Assertions.assertEquals(1.0, length1.getValue());
     }
 
@@ -201,8 +206,9 @@ public class QuantityMeasurementTest {
     void given2Inches_WhenConvertedToCentimeters_ShouldReturn5Centimeters() {
         QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
         Length inch = new Length(Unit.INCH, 2.0);
-        Length centimeter = quantityMeasurement.convertInchToCentimeter(inch.getValue());
-        Assertions.assertEquals(5, centimeter.getValue());
+        Length centimeter = new Length(Unit.CENTIMETER, 0.0);
+        Length centimeter1 = quantityMeasurement.convertLengths(inch, centimeter);
+        Assertions.assertEquals(5, centimeter1.getValue());
     }
 
     @Test
@@ -323,8 +329,9 @@ public class QuantityMeasurementTest {
     @Test
     void given1Gallon_WhenConvertedToLiters_ShouldReturn3Ponit78Liters() {
         QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-        Volume gallon1 = new Volume(Unit.LITERS, 1.0);
-        Volume liters1 = quantityMeasurement.convertGallonToLiters(gallon1.getValue());
+        Volume gallon1 = new Volume(Unit.GALLON, 1.0);
+        Volume liters = new Volume(Unit.LITERS, 0.0);
+        Volume liters1 = quantityMeasurement.convertVolumes(gallon1, liters);
         Assertions.assertEquals(3.78, liters1.getValue());
     }
 
@@ -368,7 +375,8 @@ public class QuantityMeasurementTest {
     void given1Liter_WhenComparedTOMilliliters_ShouldReturn1000Milliliters() {
         QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
         Volume liters1 = new Volume(Unit.LITERS, 1);
-        Volume milliliters1 = quantityMeasurement.convertLitersToMilliliters(liters1.getValue());
+        Volume milliliters = new Volume(Unit.MILLILITERS, 0.0);
+        Volume milliliters1 = quantityMeasurement.convertVolumes(liters1, milliliters);
         Assertions.assertEquals(1000, milliliters1.getValue());
     }
 

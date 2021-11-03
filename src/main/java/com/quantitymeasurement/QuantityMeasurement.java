@@ -1,7 +1,7 @@
 package com.quantitymeasurement;
 
 /*************************************************************************************************
- * Purpose: This is a QunatityMeasurement Class where we convert different entities.
+ * Purpose: This is a QuantityMeasurement Class where we convert different entities.
  *
  * @author Ashwith
  * @since 30/10/21
@@ -10,54 +10,15 @@ package com.quantitymeasurement;
 public class QuantityMeasurement {
 
     /**
-     * This is a method which converts Feet to Inches
+     * This is a method which converts Lengths.
      *
-     * @param feet
+     * @param
      * @return Length object
      */
-    public Length convertFeetToInch(double feet) {
-        return new Length(Unit.INCH, feet * 12);
+    public Length convertLengths(Length length1, Length length2) {
+        return new Length(length2.getUnit(), length1.getValue()*(length1.getUnit().getBaseCoversionValue()/length2.getUnit().getBaseCoversionValue()));
     }
 
-    /**
-     * This is a method which converts Feet to Yard
-     *
-     * @param feet
-     * @return Length Object
-     */
-    public Length convertFeetToYard(double feet) {
-        return new Length(Unit.YARD, feet * 0.33);
-    }
-
-    /**
-     * This is a method which converts Yard to Inches
-     *
-     * @param yard
-     * @return Length Object
-     */
-    public Length convertYardToInch(double yard) {
-        return new Length(Unit.INCH, yard * 36);
-    }
-
-    /**
-     * This is a method which converts Inches to Yard.
-     *
-     * @param inch
-     * @return Length Object
-     */
-    public Length convertInchToYard(double inch) {
-        return new Length(Unit.YARD, inch / 36);
-    }
-
-    /**
-     * This is a method which converts Inches to Centimeter.
-     *
-     * @param inch
-     * @return Length Object
-     */
-    public Length convertInchToCentimeter(double inch) {
-        return new Length(Unit.CENTIMETER, inch * 2.5);
-    }
 
     /**
      * This is a method which is used to add two length values in inches.
@@ -66,31 +27,28 @@ public class QuantityMeasurement {
      * @param length2
      * @return double - resultant of addition in inches.
      */
-    public double addLengthsInInchs(Length length1, Length length2){
+    public double addLengthsInInchs(Length length1, Length length2) {
         return (length1.getValue() * length1.getUnit().getBaseCoversionValue() + length2.getValue() * length2.getUnit().getBaseCoversionValue()) / Unit.INCH.getBaseCoversionValue();
     }
 
     /**
-     * This method is used to convert Gallons to Liters.
+     * This method is used to convert Volumes.
      *
-     * @param gallon1
+     * @param
      * @return Volume object
      */
-    public Volume convertGallonToLiters(double gallon1) {
-        return new Volume(Unit.LITERS, gallon1 * 3.78);
+    public Volume convertVolumes(Volume volume1, Volume volume2) {
+        return new Volume(volume2.getUnit(), volume1.getValue()*(volume1.getUnit().getBaseCoversionValue()/volume2.getUnit().getBaseCoversionValue()));
     }
 
     /**
-     * This is a method which converts Liters to milliliters.
+     * This is a method which adds two volumes in Liters.
      *
-     * @param liters
-     * @return Volume object
+     * @param volume1
+     * @param volume2
+     * @return
      */
-    public Volume convertLitersToMilliliters(double liters) {
-        return new Volume(Unit.MILLILITERS, liters * 1000);
-    }
-
     public double addVolumesInLiters(Volume volume1, Volume volume2) {
-        return (volume1.getValue() * volume1.getUnit().getBaseCoversionValue() + volume2.getValue() * volume2.getUnit().getBaseCoversionValue())/Unit.LITERS.getBaseCoversionValue();
+        return (volume1.getValue() * volume1.getUnit().getBaseCoversionValue() + volume2.getValue() * volume2.getUnit().getBaseCoversionValue()) / Unit.LITERS.getBaseCoversionValue();
     }
 }
