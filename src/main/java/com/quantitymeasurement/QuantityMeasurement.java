@@ -37,8 +37,8 @@ public class QuantityMeasurement {
      * @param
      * @return Volume object
      */
-    public Weight convertVolumes(Weight volume1, Weight volume2) {
-        return new Weight(volume2.getUnit(), volume1.getValue()*(volume1.getUnit().getBaseCoversionValue()/volume2.getUnit().getBaseCoversionValue()));
+    public Volume convertVolumes(Volume volume1, Volume volume2) {
+        return new Volume(volume2.getUnit(), volume1.getValue()*(volume1.getUnit().getBaseCoversionValue()/volume2.getUnit().getBaseCoversionValue()));
     }
 
     /**
@@ -48,7 +48,7 @@ public class QuantityMeasurement {
      * @param volume2
      * @return
      */
-    public double addVolumesInLiters(Weight volume1, Weight volume2) {
+    public double addVolumesInLiters(Volume volume1, Volume volume2) {
         return (volume1.getValue() * volume1.getUnit().getBaseCoversionValue() + volume2.getValue() * volume2.getUnit().getBaseCoversionValue()) / Unit.LITERS.getBaseCoversionValue();
     }
 
@@ -61,5 +61,16 @@ public class QuantityMeasurement {
      */
     public Weight convertWeights(Weight weight1, Weight weight2){
         return new Weight(weight2.getUnit(), weight1.getValue()*(weight1.getUnit().getBaseCoversionValue()/weight2.getUnit().getBaseCoversionValue()));
+    }
+
+    /**
+     * This is a method which adds two volumes in Liters.
+     *
+     * @param weight1
+     * @param weight2
+     * @return
+     */
+    public double addWeigthsInKilogram(Weight weight1, Weight weight2) {
+        return (weight1.getValue() * weight1.getUnit().getBaseCoversionValue() + weight2.getValue() * weight2.getUnit().getBaseCoversionValue()) / Unit.KILOGRAM.getBaseCoversionValue();
     }
 }
