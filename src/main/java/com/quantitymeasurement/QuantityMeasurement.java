@@ -10,14 +10,17 @@ package com.quantitymeasurement;
 public class QuantityMeasurement {
 
     /**
-     * This is a method which converts Lengths.
+     * This is a method which converts Quantities.
      *
-     * @param length1
-     * @param length2
-     * @return Length object
+     * @param quantity1
+     * @param quantity2
+     * @return Quantity object
      */
-    public Length convertLengths(Length length1, Length length2) {
-        return new Length(length2.getUnit(), length1.getValue()*(length1.getUnit().getBaseCoversionValue()/length2.getUnit().getBaseCoversionValue()));
+    public Quantity convertQuantities(Quantity quantity1, Quantity quantity2) {
+        if(quantity1.getUnit().getQUnit() == quantity2.getUnit().getQUnit())
+        return new Quantity(quantity2.getUnit(), quantity1.getValue() *
+                (quantity1.getUnit().getBaseCoversionValue() / quantity2.getUnit().getBaseCoversionValue()));
+        return new Quantity(Unit.ERROR, 0);
     }
 
     /**
@@ -27,19 +30,9 @@ public class QuantityMeasurement {
      * @param length2
      * @return double - resultant of addition in inches.
      */
-    public double addLengthsInInchs(Length length1, Length length2) {
-        return (length1.getValue() * length1.getUnit().getBaseCoversionValue() + length2.getValue() * length2.getUnit().getBaseCoversionValue()) / Unit.INCH.getBaseCoversionValue();
-    }
-
-    /**
-     * This method is used to convert Volumes.
-     *
-     * @param volume1
-     * @param volume2
-     * @return Volume object
-     */
-    public Volume convertVolumes(Volume volume1, Volume volume2) {
-        return new Volume(volume2.getUnit(), volume1.getValue()*(volume1.getUnit().getBaseCoversionValue()/volume2.getUnit().getBaseCoversionValue()));
+    public double addLengthsInInches(Quantity length1, Quantity length2) {
+        return (length1.getValue() * length1.getUnit().getBaseCoversionValue() +
+                length2.getValue() * length2.getUnit().getBaseCoversionValue()) / Unit.INCH.getBaseCoversionValue();
     }
 
     /**
@@ -47,21 +40,11 @@ public class QuantityMeasurement {
      *
      * @param volume1
      * @param volume2
-     * @return
+     * @return double - resultant of addition
      */
-    public double addVolumesInLiters(Volume volume1, Volume volume2) {
-        return (volume1.getValue() * volume1.getUnit().getBaseCoversionValue() + volume2.getValue() * volume2.getUnit().getBaseCoversionValue()) / Unit.LITERS.getBaseCoversionValue();
-    }
-
-    /**
-     * This is a method which compares two weights.
-     *
-     * @param weight1
-     * @param weight2
-     * @return Weight object
-     */
-    public Weight convertWeights(Weight weight1, Weight weight2){
-        return new Weight(weight2.getUnit(), weight1.getValue()*(weight1.getUnit().getBaseCoversionValue()/weight2.getUnit().getBaseCoversionValue()));
+    public double addVolumesInLiters(Quantity volume1, Quantity volume2) {
+        return (volume1.getValue() * volume1.getUnit().getBaseCoversionValue()
+                + volume2.getValue() * volume2.getUnit().getBaseCoversionValue()) / Unit.LITERS.getBaseCoversionValue();
     }
 
     /**
@@ -71,11 +54,7 @@ public class QuantityMeasurement {
      * @param weight2
      * @return double - resultant of addition.
      */
-    public double addWeightsInKilogram(Weight weight1, Weight weight2) {
+    public double addWeightsInKilogram(Quantity weight1, Quantity weight2) {
         return (weight1.getValue() * weight1.getUnit().getBaseCoversionValue() + weight2.getValue() * weight2.getUnit().getBaseCoversionValue()) / Unit.KILOGRAM.getBaseCoversionValue();
-    }
-
-    public Temperature convertTemperature(Temperature temperature1, Temperature temperature2){
-        return new Temperature(temperature2.getUnit(), temperature1.getValue()*(temperature2.getUnit().getBaseCoversionValue()/temperature1.getUnit().getBaseCoversionValue()));
     }
 }

@@ -1,15 +1,6 @@
 package com.quantitymeasurement;
 
-import java.util.Objects;
-/***************************************************************************************************
- * Purpose: This is a pojo class where we have all the information about the Units of Length that we have.
- *
- * @author Ashwith
- * @since 30/10/21
- ****************************************************************************************************/
-
-public class Length {
-
+public class Quantity {
     private final double value;
     private final Unit unit;
 
@@ -19,7 +10,7 @@ public class Length {
      * @param unit
      * @param value
      */
-    public Length(Unit unit, double value) {
+    public Quantity(Unit unit, double value) {
         this.value = value;
         this.unit = unit;
     }
@@ -46,7 +37,7 @@ public class Length {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Length length = (Length) o;
-        return Double.compare(length.value, value) == 0 && unit == length.unit;
+        Quantity volume = (Quantity) o;
+        return Double.compare(volume.value, value) == 0 && unit == volume.unit;
     }
 }
