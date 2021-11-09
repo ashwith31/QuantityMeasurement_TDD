@@ -216,7 +216,7 @@ public class QuantityMeasurementTest {
         QuantityMeasurement qm = new QuantityMeasurement();
         Quantity inch1 = new Quantity(Unit.INCH, 2.0);
         Quantity inch2 = new Quantity(Unit.INCH,2.0);
-        double sum = qm.addLengthsInInches(inch1, inch2);
+        double sum = qm.addQuantities(inch1, inch2);
         Assertions.assertEquals(4.0, sum);
     }
 
@@ -225,7 +225,7 @@ public class QuantityMeasurementTest {
         QuantityMeasurement qm = new QuantityMeasurement();
         Quantity inch1 = new Quantity(Unit.FEET, 1.0);
         Quantity inch2 = new Quantity(Unit.INCH,2.0);
-        double sum = qm.addLengthsInInches(inch1, inch2);
+        double sum = qm.addQuantities(inch1, inch2);
         Assertions.assertEquals(14.0, sum);
     }
 
@@ -234,7 +234,7 @@ public class QuantityMeasurementTest {
         QuantityMeasurement qm = new QuantityMeasurement();
         Quantity feet1 = new Quantity(Unit.FEET, 1.0);
         Quantity feet2 = new Quantity(Unit.FEET,1.0);
-        double sum = qm.addLengthsInInches(feet1, feet2);
+        double sum = qm.addQuantities(feet1, feet2);
         Assertions.assertEquals(24.0, sum);
     }
 
@@ -243,7 +243,7 @@ public class QuantityMeasurementTest {
         QuantityMeasurement qm = new QuantityMeasurement();
         Quantity inch1 = new Quantity(Unit.INCH, 2.0);
         Quantity centimeter1 = new Quantity(Unit.CENTIMETER,2.5);
-        double sum = qm.addLengthsInInches(inch1, centimeter1);
+        double sum = qm.addQuantities(inch1, centimeter1);
         Assertions.assertEquals(3.0, sum);
     }
 
@@ -361,7 +361,7 @@ public class QuantityMeasurementTest {
         QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
         Quantity gallon1 = new Quantity(Unit.GALLON, 1);
         Quantity liters1 = new Quantity(Unit.LITERS, 3.78);
-        double result = quantityMeasurement.addVolumesInLiters(gallon1, liters1);
+        double result = quantityMeasurement.addQuantities(gallon1, liters1);
         Assertions.assertEquals(7.57, result,0.1);
     }
 
@@ -370,7 +370,7 @@ public class QuantityMeasurementTest {
         QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
         Quantity milliliters1 = new Quantity(Unit.MILLILITERS, 1000);
         Quantity liters1 = new Quantity(Unit.LITERS, 1);
-        double result = quantityMeasurement.addVolumesInLiters(milliliters1, liters1);
+        double result = quantityMeasurement.addQuantities(milliliters1, liters1);
         Assertions.assertEquals(2.0, result,0.1);
     }
     @Test
@@ -417,30 +417,30 @@ public class QuantityMeasurementTest {
         QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
         Quantity weight1 = new Quantity(Unit.TONNE,1);
         Quantity weight2 = new Quantity(Unit.KILOGRAM, 1);
-        double result = quantityMeasurement.addWeightsInKilogram(weight1, weight2);
+        double result = quantityMeasurement.addQuantities(weight1, weight2);
         Assertions.assertEquals(1001, result);
     }
 
     @Test
-    void given0FarhenheitAnd0Farenheit_ShouldReturnEqual() {
-        Quantity farenheit1 = new Quantity(Unit.FAHRENHEIT, 0.0);
-        Quantity farenheit2 = new Quantity(Unit.FAHRENHEIT, 0);
-        Assertions.assertEquals(farenheit1, farenheit2);
+    void given0FahrenheitAnd0Fahrenheit_ShouldReturnEqual() {
+        Quantity fahrenheit1 = new Quantity(Unit.FAHRENHEIT, 0.0);
+        Quantity fahrenheit2 = new Quantity(Unit.FAHRENHEIT, 0);
+        Assertions.assertEquals(fahrenheit1, fahrenheit2);
     }
 
     @Test
     void given0CelsiusAnd0Celsius_ShouldReturnEqual() {
         Quantity celsius1 = new Quantity(Unit.CELSIUS, 0.0);
-        Quantity facelsius2 = new Quantity(Unit.CELSIUS, 0);
-        Assertions.assertEquals(celsius1, facelsius2);
+        Quantity celsius2 = new Quantity(Unit.CELSIUS, 0);
+        Assertions.assertEquals(celsius1, celsius2);
     }
 
     @Test
-    void given212Farhenheit_WhenConvertedToCelsius_ShouldReturn100Celsius() {
+    void given212Fahrenheit_WhenConvertedToCelsius_ShouldReturn100Celsius() {
         QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-        Quantity farhenheit = new Quantity(Unit.FAHRENHEIT, 212);
+        Quantity fahrenheit = new Quantity(Unit.FAHRENHEIT, 212);
         Quantity celsius = new Quantity(Unit.CELSIUS,0.0);
-        Quantity result = quantityMeasurement.convertQuantities(farhenheit, celsius);
+        Quantity result = quantityMeasurement.convertQuantities(fahrenheit, celsius);
         Assertions.assertEquals(100, result.getValue());
     }
 }

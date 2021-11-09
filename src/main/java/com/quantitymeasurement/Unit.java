@@ -1,40 +1,42 @@
 package com.quantitymeasurement;
-
+/**************************************************************************
+ * In this enum we have all the information regarding the units
+ *
+ * @author Ashwith
+ * @since 8/11/21
+ ****************************************************************************/
 public enum Unit {
-    FEET(30.0, "Length"), INCH(2.5, "Length"),
-    YARD(90.0, "Length"), CENTIMETER(1.0, "Length"),
-    GALLON(3780, "Volume"), LITERS(1000, "Volume"),
-    MILLILITERS(1, "Volume"), KILOGRAM(1000, "Weight"),
-    GRAM(1, "Weight"), TONNE(1000000, "Weight"),
+    FEET(12.0, "Length"), INCH(1.0, "Length"),
+    YARD(36.0, "Length"), CENTIMETER(0.4, "Length"),
+    GALLON(3.780, "Volume"), LITERS(1, "Volume"),
+    MILLILITERS(0.001, "Volume"), KILOGRAM(1, "Weight"),
+    GRAM(0.001, "Weight"), TONNE(1000, "Weight"),
     FAHRENHEIT(100, "Temperature"), CELSIUS(212, "Temperature"),
     ERROR(0,"Invalid Inputs");
 
-    //private static Unit Feet;
-    private final double baseCoversionValue;
-
-    public String getQUnit() {
-        return unit;
-    }
-
+    private final double baseConversionValue;
     private final String unit;
 
     /**
      * Constructor to initialize objects.
      *
-     * @param baseCoversionValue
+     * @param baseConversionValue
      */
-    Unit(double baseCoversionValue, String unit) {
-        this.baseCoversionValue = baseCoversionValue;
+    Unit(double baseConversionValue, String unit) {
+        this.baseConversionValue = baseConversionValue;
         this.unit = unit;
     }
 
     /**
-     * Getter for baseCoversionValue.
+     * Getter for baseConversionValue.
      *
      * @return double - baseConversionValue
      */
-    public double getBaseCoversionValue() {
-        return baseCoversionValue;
+    public double getBaseConversionValue() {
+        return baseConversionValue;
     }
 
+    public String getQuantityUnit() {
+        return unit;
+    }
 }

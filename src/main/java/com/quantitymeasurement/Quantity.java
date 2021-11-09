@@ -1,5 +1,10 @@
 package com.quantitymeasurement;
-
+/*******************************************************************************************
+ * Purpose: This is a quantity class in which we have information regarding quantities.
+ *
+ * @author Ashwith
+ * @since 8/11/21
+ ********************************************************************************************/
 public class Quantity {
     private final double value;
     private final Unit unit;
